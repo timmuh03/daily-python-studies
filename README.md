@@ -9,12 +9,8 @@ I solve one problem a day — not for streaks or LeetCode rank, but to get bette
 
 | Problem                     | What I practiced                                       |
 |-----------------------------|--------------------------------------------------------|
-| Two Sum                     | O(n) hash-map, handles negatives/duplicates            |
 | Pong ball prediction        | Vector physics, perfect wall + corner bounces          |
-| Wordle scorer               | Senior-grade `Counter` + two-pass string matching      |
-| Age from birthday           | Clean `datetime` + tuple comparison                    |
-| Anagram checker             | Idiomatic Python with `Counter`                        |
-| + dozens more               | Grid traversal, date logic, algorithms, clarity        |
+| +  more everyday            | Grid traversal, date logic, algorithms, clarity        |
 
 All solutions are deliberately minimal, readable, and production-style.
 
