@@ -21,8 +21,8 @@ Homeschooling dad, remote-ready, consistent shipper.
 Currently seeking remote Python roles (junior → mid).  
 Open to chat, live coding, or pair programming.
 
-— Tim Muhlestein 
--timmuh03@gmail.com
--https://www.linkedin.com/in/timmuh/
+- Tim Muhlestein 
+- timmuh03@gmail.com
+- https://www.linkedin.com/in/timmuh/
 
 Thanks for stopping by.
