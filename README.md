@@ -18,9 +18,6 @@ I solve one problem a day — not for streaks or LeetCode rank, but to get bette
 
 All solutions are deliberately minimal, readable, and production-style.
 
-## Consistency
-![Contribution graph](https://ghchart.risingstack.com/timmuh03?theme=dark)
-
 ## About me
 Self-taught Python developer with strong Git + SQL.  
 Homeschooling dad, remote-ready, consistent shipper.
