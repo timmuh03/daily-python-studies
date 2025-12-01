@@ -17,7 +17,7 @@ def find_target(arr, target):
     values = {}
     
     for i in range(len(arr)):
-        if -arr[i] + target in values: # Compliment of already seen
+        if -arr[i] + target in values: # Compliment of numbers already seen
             return [values[-arr[i] + target], i]
         values[arr[i]] = i  # Map current_value:index
 
