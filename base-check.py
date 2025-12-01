@@ -15,8 +15,22 @@ Base 36: 0-9 and A-Z
 
 
 def is_valid_number(n, base):
+    '''
+    Checks if a string is valid for a given base
+    '''
+    
+    # Requires something in n
+    if not n or base > 36:
+        return False
+    
+    lower_n = n.lower()                                 # Case insensitive
+    range_map = '0123456789abcdefghijklmnopqrstuvwxyz'  # Allowed characters up to base 36
+        
+    for char in lower_n:
+        if char not in range_map[:base]:                # Only check up to base
+            return False        
 
-    return n
+    return True
 
 
 if __name__ == "__main__":
