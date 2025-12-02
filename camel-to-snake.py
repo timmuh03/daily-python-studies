@@ -9,14 +9,16 @@ Convert all letters to lowercase.
 Separate words with an underscore (_).
 '''
 
-import re
+def camel_to_snake(camel):
+    
+    snake = []
+    
+    for i, char in enumerate(camel):
+        if i > 0 and char.isupper():
+            snake.append('_')
+        snake.append(char.lower())
 
-def camel_to_snake(camel: str) -> str:
-    # Insert _ before capital letters, but not at start
-    # Then handle sequences of capitals followed by lowercase
-    s = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', camel)
-    s = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s)
-    return s.lower()
+    return ''.join(snake)
 
 
 
