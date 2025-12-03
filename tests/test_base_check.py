@@ -1,42 +1,8 @@
-'''
-Given a string representing a number, and an integer base from 2 to 36, determine whether the number is valid in that base.
-
-The string may contain integers, and uppercase or lowercase characters.
-The check should be case-insensitive.
-The base can be any number 2-36.
-A number is valid if every character is a valid digit in the given base.
-Example of valid digits for bases:
-Base 2: 0-1
-Base 8: 0-7
-Base 10: 0-9
-Base 16: 0-9 and A-F
-Base 36: 0-9 and A-Z
-'''
+import pytest
+from base_check.solution import Solution
 
 
-def is_valid_number(n, base):
-    '''
-    Checks if a string is valid for a given base
-    '''
-    
-    # Requires something in n
-    if not n or base > 36:
-        return False
-    
-    lower_n = n.lower()                                 # Case insensitive
-    range_map = '0123456789abcdefghijklmnopqrstuvwxyz'  # Allowed characters up to base 36
-        
-    for char in lower_n:
-        if char not in range_map[:base]:                # Only check up to base
-            return False        
-
-    return True
-
-
-if __name__ == "__main__":
-    print("Base Validation — Test Cases\n")
-
-    tests = [
+@pytest.mark.parametrize("n, base, expected", [
         # (string, base, expected) → expected: True / False
         ("1010",      2,  True),   # Binary — valid
         ("123",       2,  False),  # Digit '3' not allowed in base 2
@@ -58,9 +24,10 @@ if __name__ == "__main__":
         ("  123  ",  10,  False),  # Whitespace not allowed
         ("10",        1,  False),  # Base must be >= 2
         ("10",       37,  False),  # Base must be <= 36
-    ]
+    ])
 
-    for s, base, expected in tests:
-        result = is_valid_number(s, base)
-        status = "PASS" if result == expected else "FAIL"
-        print(f"{s:>12} in base {base:2} → {str(result):5} | Expected: {expected} [{status}]")
+def test_base_check(n, base, expected):
+    sol = Solution()
+    result = sol.is_valid_number(n, base)
+    assert result == expected, f"Failed for string:{n}, base:{base}"
+    

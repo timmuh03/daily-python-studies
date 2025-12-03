@@ -1,11 +1,5 @@
 import pytest
-import sys
-import os
-from typing import Literal
-from typing import LiteralString
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
-from src.solution import Solution
+from needle_in_haystack.solution import Solution
 
 
 # Test cases for needle_in_haystack
@@ -39,4 +33,4 @@ from src.solution import Solution
 def test_strStr(haystack: str, needle: str, expected: int):
     sol = Solution()
     result = sol.strStr(haystack, needle)
-    assert result == expected, "Failed for haystack='{haystack}' needle='{needle}'"
+    assert result == expected, f"Failed for haystack='{haystack}' needle='{needle}'"
