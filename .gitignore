@@ -1,0 +1,38 @@
+#-------------------------------------
+# Python
+#-------------------------------------
+
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual environments
+venv/
+env/
+
+# Pipenv / Poetry
+Pipfile.lock
+poetry.lock
+
+#-------------------------------
+# Pytest
+#-------------------------------
+.pytest_cache/
+
+#-------------------------------
+# VSCode
+#-------------------------------
+.vscode/
+
+#-------------------------------
+# OS files
+#-------------------------------
+.DS_Store
+Thumbs.db
