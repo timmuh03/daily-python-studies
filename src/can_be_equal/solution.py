@@ -38,7 +38,3 @@ class Solution:
                     
         #     count += 1
         # return arr == target
-        
-    
-sol = Solution()
-print(sol.canBeEqual([1,2,3,4], [2,4,1,3]))
