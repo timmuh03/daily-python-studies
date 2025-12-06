@@ -27,7 +27,6 @@ class Solution:
         
         new_array =[]
         for i in range(m):
-            temp_array = original[n*i:n+n*i]
-            new_array.append(temp_array)
+            new_array.append(original[n*i:n+n*i])
                 
         return new_array
