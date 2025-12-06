@@ -8,6 +8,12 @@ The elements from indices 0 to n - 1 (inclusive) of original should form the fir
 the elements from indices n to 2 * n - 1 (inclusive) should form the second row of the constructed 2D array, and so on.
 
 Return an m x n 2D array constructed according to the above procedure, or an empty 2D array if it is impossible.
+
+Constraints:
+
+1 <= original.length <= 5 * 104
+1 <= original[i] <= 105
+1 <= m, n <= 4 * 104
 """
 
 
@@ -15,5 +21,14 @@ Return an m x n 2D array constructed according to the above procedure, or an emp
 
 class Solution:
     def construct2DArray(self, original: list[int], m: int, n: int) -> list[list[int]]:
-        
-        return [[0]]
+        new_array =[]
+        count = 0
+        for i in range(m):
+            temp_array = []
+            for i in range(n):
+                temp_array.append(original[count])
+                count += 1
+            new_array.append(temp_array)
+                
+        return new_array
+    

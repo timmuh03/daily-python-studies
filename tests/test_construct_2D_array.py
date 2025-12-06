@@ -20,14 +20,14 @@ from construct_2D_array.solution import Solution
     
     # Length doesn't fit dimensions
     ([1,2,3], 2, 2,
-     [[]]),
+     []),
     
     # Empty inputs
     ([], 0, 0,
-     [[]]),
+     []),
     
     ([], 1, 1,
-     [[]]),
+     []),
     
     # Single element
     ([42], 1, 1,
