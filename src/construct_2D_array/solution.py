@@ -21,6 +21,10 @@ Constraints:
 
 class Solution:
     def construct2DArray(self, original: list[int], m: int, n: int) -> list[list[int]]:
+        
+        if m * n != len(original) or not original:
+            return []
+            
         new_array =[]
         count = 0
         for i in range(m):
