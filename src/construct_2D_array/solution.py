@@ -24,15 +24,10 @@ class Solution:
         
         if m * n != len(original) or not original:
             return []
-            
+        
         new_array =[]
-        count = 0
         for i in range(m):
-            temp_array = []
-            for i in range(n):
-                temp_array.append(original[count])
-                count += 1
+            temp_array = original[n*i:n+n*i]
             new_array.append(temp_array)
                 
         return new_array
-    
