@@ -35,6 +35,3 @@ class Solution:
                 right = mid - 1
                 
         return left
-    
-sol = Solution()
-print(sol.searchInsert([1,3,5,6], 7))
