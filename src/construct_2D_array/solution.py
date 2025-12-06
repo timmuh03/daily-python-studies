@@ -21,12 +21,7 @@ Constraints:
 
 class Solution:
     def construct2DArray(self, original: list[int], m: int, n: int) -> list[list[int]]:
-        
-        if m * n != len(original) or not original:
-            return []
-        
-        new_array =[]
-        for i in range(m):
-            new_array.append(original[n*i:n+n*i])
-                
-        return new_array
+         
+                # Return [] if no value in list or dimensions worn't work
+                # Row i starts at index n*i and all rows have a length of n
+        return [] if len(original) != m * n else [original[n * i : (n * i) + n] for i in range(m)]
