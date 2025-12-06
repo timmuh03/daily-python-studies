@@ -15,4 +15,5 @@ Return an m x n 2D array constructed according to the above procedure, or an emp
 
 class Solution:
     def construct2DArray(self, original: list[int], m: int, n: int) -> list[list[int]]:
+        
         return [[0]]
