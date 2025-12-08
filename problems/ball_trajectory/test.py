@@ -1,5 +1,5 @@
 import pytest
-from ball_trajectory.solution import Solution
+from .solution import Solution
 
 
 @pytest.mark.parametrize("matrix, expected", [

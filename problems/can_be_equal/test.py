@@ -1,5 +1,5 @@
 import pytest
-from can_be_equal.solution import Solution
+from .solution import Solution
 
 
 @pytest.mark.parametrize("target, arr, expected", [

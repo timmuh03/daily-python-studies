@@ -1,5 +1,5 @@
 import pytest
-from targeted_sum.solution import Solution
+from .solution import Solution
 
 @pytest.mark.parametrize("arr, target, expected", [                   
 

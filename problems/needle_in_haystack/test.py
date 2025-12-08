@@ -1,5 +1,5 @@
 import pytest
-from needle_in_haystack.solution import Solution
+from .solution import Solution
 
 
 # Test cases for needle_in_haystack

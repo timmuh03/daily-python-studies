@@ -1,5 +1,5 @@
 import pytest
-from search_instert_position.solution import Solution
+from .solution import Solution
 
 @pytest.mark.parametrize("nums, target, expected", [
      # Target exists

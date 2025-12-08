@@ -1,5 +1,5 @@
 import pytest
-from base_check.solution import Solution
+from .solution import Solution
 
 
 @pytest.mark.parametrize("n, base, expected", [
