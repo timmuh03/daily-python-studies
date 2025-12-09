@@ -25,7 +25,7 @@ class Solution:
             if income <= already_taxed:
                 break
             
-            taxable = (min(upper, income) - already_taxed)
+            taxable = min(upper, income) - already_taxed
             taxes += taxable * percent / 100
             already_taxed = upper
             
