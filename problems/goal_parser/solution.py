@@ -24,5 +24,5 @@ class Solution:
                 result.append('al')
                 i += 4
             else:
-                return ''
+                raise ValueError(f"Invalid token at index {i}")
         return ''.join(result)
