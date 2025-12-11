@@ -9,6 +9,9 @@ Given an array strs of alphanumeric strings, return the maximum value of any str
 
 class Solution:
     def maximumValue(self, strs: list[str]) -> int:
+        if not strs:
+            raise ValueError("Cannot accept empty list")
+        
         values = []
         
         for s in strs:
@@ -16,4 +19,4 @@ class Solution:
                 values.append(int(s))
             except ValueError:
                 values.append(len(s))
-        return max(values) if values else -1
+        return max(values)

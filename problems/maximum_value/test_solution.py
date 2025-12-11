@@ -13,12 +13,17 @@ from .solution import Solution
      1),
     
     (["-1", "-2", "-3"],
-     -1)
+     -1),
     
 ])
 
 def test_maximum_value(strs, expected):
     result = Solution().maximumValue(strs)
     assert result == expected, f"Failed for strs:{strs}, expected:{expected}, result:{result}"
+
+def test_expected_exception():
+    with pytest.raises(ValueError):
+        Solution().maximumValue([])
+    
     
     
