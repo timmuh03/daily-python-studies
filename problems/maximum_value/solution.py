@@ -9,4 +9,11 @@ Given an array strs of alphanumeric strings, return the maximum value of any str
 
 class Solution:
     def maximumValue(self, strs: list[str]) -> int:
-        return 0
+        values = []
+        
+        for s in strs:
+            try:
+                values.append(int(s))
+            except ValueError:
+                values.append(len(s))
+        return max(values) if values else -1
