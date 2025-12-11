@@ -7,13 +7,14 @@ I solve one problem a day — not for streaks or LeetCode rank, but to get bette
 
 ## Highlights
 
-| Problem                     | What I practiced                                       |
-|-----------------------------|--------------------------------------------------------|
-| Pong ball prediction        | Vector physics, perfect wall + corner bounces          |
-| Max divisor score           | Parsing ints to set and count keys                     |
-| Search insert position      | Divide and conquer tactics to parse only what is needed|
-| Targeted_sum                | Using a dictionary to compare compliments              |
-| +  more everyday            | Grid traversal, date logic, algorithms, clarity        |
+| Problem                       | What I practiced                                          |
+|-------------------------------|-----------------------------------------------------------|
+| Pong ball prediction          | Vector physics, perfect wall + corner bounces             |
+| Max divisor score             | Parsing ints to set and count keys                        |
+| Search insert position        | Divide and conquer tactics to parse only what is needed   |
+| Targeted_sum                  | Using a dictionary to compare compliments                 |
+| Maximum Value                 | Raising and handling Errors and Try/Except blocks         |
+| +  more everyday              | Grid traversal, date logic, algorithms, clarity           |
 
 All solutions are deliberately minimal, readable, and production-style.
 
