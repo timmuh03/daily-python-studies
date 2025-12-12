@@ -50,11 +50,8 @@ def test_mixed_usage():
 
 
 @pytest.mark.parametrize("carType", [1, 2, 3])
+
 def test_invalid_car_type_does_not_crash(carType):
-    """
-    Depending on how you implement addCar, invalid types may simply do nothing.
-    Test that calling with valid types works but does not crash.
-    """
     ps = ParkingSystem(1, 1, 1)
     # Should return boolean; calling with valid types is safe
     assert isinstance(ps.addCar(carType), bool)
