@@ -8,8 +8,19 @@ However, the total weight of all containers, if loaded onto the deck,
 must not exceed the ship's maximum weight capacity, maxWeight.
 
 Return the maximum number of containers that can be loaded onto the ship. 
+
+Constraints:
+
+1 <= n <= 1000
+1 <= w <= 1000
+1 <= maxWeight <= 109
 """
 
 class Solution:
     def maxContainers(self, n: int, w: int, maxWeight: int) -> int:
+        size = n*n
+        if size * w <= maxWeight:
+            return size
+        else:
+            return maxWeight // w
         return 0

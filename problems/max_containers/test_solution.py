@@ -1,7 +1,7 @@
 import pytest
 from .solution import Solution
 
-@pytest.mark.parametrize("n: int, w: int, maxWeight: int, expected: int", [
+@pytest.mark.parametrize("n, w, maxWeight, expected", [
     (2, 3, 15,
      4),
     (3, 5, 20,
