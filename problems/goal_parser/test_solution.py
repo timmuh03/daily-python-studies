@@ -8,12 +8,9 @@ from .solution import Solution
     ('', 
      ''),
     
-    ("FFF",
-     ''),
-    
-    ("()(al)(())",
-    "")
-    
+    ('()G(al)()',
+     'oGalo')
+       
 ])
 
 def test_goal_parser(command, expected):
