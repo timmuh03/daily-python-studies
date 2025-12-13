@@ -18,9 +18,7 @@ Constraints:
 
 class Solution:
     def maxContainers(self, n: int, w: int, maxWeight: int) -> int:
-        size = n*n
-        if size * w <= maxWeight:
-            return size
-        else:
-            return maxWeight // w
-        return 0
+            # n*n is max num of containers.
+            # if max num of containers' weight is less/equal to maxWeight they can all fit
+            # else max num of containters that can fit is determined by maxWeight // container weight (w)
+        return n*n if n*n*w <= maxWeight else maxWeight // w
