@@ -1,5 +1,5 @@
 import pytest
-from solution import Solution
+from .solution import Solution
 
 @pytest.mark.parametrize("words, expected", [
     (["abc", "car", "ada", "racecar", "cool"],
@@ -8,7 +8,7 @@ from solution import Solution
     (["notapalindrome", "racecar"], 
      "racecar"),
     
-    ("none", "of", "these", "are", "palindromes",
+    (["none", "of", "these", "are", "palindromes"],
      "")
     
 ])

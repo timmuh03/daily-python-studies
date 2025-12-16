@@ -8,4 +8,8 @@ A string is palindromic if it reads the same forward and backward.
 
 class Solution:
     def firstPalindrome(self, words: list[str]) -> str:
+        for word in words:
+            if word[:] == word[::-1]:
+                return word
         return ""
+        # return next((word for word in words if word == word[::-1]), "")
