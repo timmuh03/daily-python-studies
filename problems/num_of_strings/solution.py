@@ -8,4 +8,7 @@ A substring is a contiguous sequence of characters within a string.
 
 class Solution:
     def numOfStrings(self, patterns: list[str], word: str) -> int:
-        return 0
+        if not patterns or not word:
+            raise ValueError("Missing values")
+        
+        return sum(pat in word for pat in patterns)
