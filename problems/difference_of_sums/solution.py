@@ -11,4 +11,6 @@ Return the integer num1 - num2.
 
 class Solution:
     def differenceOfSums(self, n: int, m: int) -> int:
-        return -1
+        num1 = sum(num for num in range(1, n + 1) if num % m != 0)
+        num2 = sum(num for num in range(1, n + 1) if num % m == 0)
+        return num1 - num2
