@@ -14,13 +14,14 @@ class Solution:
         num1 = 0
         num2 = 0
         
-        
         for num in range(1, n + 1):
             if num % m != 0:
                 num1 += num
             elif num % m == 0:
                 num2 += num
             
-        # num1 = sum(num for num in range(1, n + 1) if num % m != 0)
-        # num2 = sum(num for num in range(1, n + 1) if num % m == 0)
         return num1 - num2
+    
+    # these equations will do the same thing the for loop does in O(1) time instead of O(n)
+    # num2 = m * (n//m) * (n//m + 1) // 2    
+    # num1 = (n * (n +1) // 2) - num2
