@@ -13,4 +13,31 @@ Given a string password, return true if it is a strong password. Otherwise, retu
 
 class Solution:
     def strongPasswordCheckerII(self, password: str) -> bool:
+        if len(password) < 8:
+            return False
+        
+        has_upper = False
+        has_lower = False
+        has_digit = False
+        has_special = False
+        has_double = False
+        
+        for i in range(len(password)):
+            char = password[i]
+            
+            if char.isupper():
+                has_upper = True
+            if char.islower():
+                has_lower = True
+            if char.isdigit():
+                has_digit = True
+            if char in "!@#$%^&*()-+":
+                has_special = True            
+        
+            if i < len(password) - 1 and char == password[i +1]:
+                has_double = True
+            
+        if has_upper and has_lower and has_digit and has_special and not has_double:
+            return True
+        
         return False
