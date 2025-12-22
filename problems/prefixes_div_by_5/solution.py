@@ -11,4 +11,14 @@ Return an array of booleans answer where answer[i] is true if xi is divisible by
 
 class Solution:
     def prefixesDivBy5(self, nums: list[int]) -> list[bool]:
-        return [False]
+        bool_arr = []
+        bin_num = ""
+        
+        for i in range(len(nums)):
+            bin_num += str(nums[i])
+            if int(str(bin_num), 2) % 5 == 0:
+                bool_arr.append(True)
+            else:
+                bool_arr.append(False)
+                
+        return bool_arr
