@@ -11,13 +11,11 @@ Return an array of booleans answer where answer[i] is true if xi is divisible by
 
 class Solution:
     def prefixesDivBy5(self, nums: list[int]) -> list[bool]:
-        bool_arr = []
+        result = []
         remainder = 0
-        for i in range(len(nums)):
-            remainder = (remainder * 2  + nums[i]) % 5
-            if remainder == 0:    
-                bool_arr.append(True)
-            else:
-                bool_arr.append(False)
+        for bit in nums:
+            # remainder = (remainder << 1 | bit) bitwise operation to so the same as below
+            remainder = (remainder * 2  + bit) % 5 # only need remainder to figure divisibility
+            result.append(remainder == 0)
                 
-        return bool_arr
+        return result

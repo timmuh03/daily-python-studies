@@ -5,7 +5,11 @@ from .solution import Solution
 @pytest.mark.parametrize("nums, expected", [
     ([0,1,1], [True, False, False]),
     
-    ([1,1,1], [False, False, False])
+    ([1,1,1], [False, False, False]),
+    
+    ([0,0,0,], [True, True, True]),
+    
+    ([1, 0, 1], [False, False, True])
 ])
 
 
