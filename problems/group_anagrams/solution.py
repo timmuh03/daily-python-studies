@@ -16,9 +16,16 @@ There is no string in strs that can be rearranged to form "bat".
 The strings "nat" and "tan" are anagrams as they can be rearranged to form each other.
 The strings "ate", "eat", and "tea" are anagrams as they can be rearranged to form each other.
 """
+from collections import defaultdict
+
 
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        my_dict = defaultdict(list)
         
-        return [[]]
+        for word in strs:
+            key_word = "".join(sorted(word.casefold())).strip()
+            my_dict[key_word].append(word)
+        
+        return list(my_dict.values())
         
