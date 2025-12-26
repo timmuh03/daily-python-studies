@@ -18,9 +18,15 @@ from collections import Counter
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         perm = Counter(s1)
-        for i in range(len(s2) - len(s1) + 1):
-            sub_perm = Counter(s2[i:len(s1) + i])
-            print(f"perm:{perm}, sub_perm:{sub_perm}")
-            if sub_perm == perm:
+        window = Counter(s2[:len(s1)])
+        for i, char in enumerate(s2[:-len(s1)]):
+            print(f"perm:{perm}, window:{window}")
+            if window == perm:
                 return True
-        return False
+            window[char] -= 1
+            if window[char] == 0:
+                del window[char]
+            window[s2[i + len(s1)]] += 1
+            
+            
+        return window == perm
