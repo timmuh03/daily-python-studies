@@ -16,9 +16,25 @@ s consists of only uppercase English letters.
 0 <= k <= s.length
 """
 
-
+from collections import defaultdict
 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        
-        return -1
+        tot_count = 0
+        char_count = defaultdict(int)
+        max_freq = 0
+        left = 0
+        best = 0
+        for char in s:
+            tot_count += 1
+            char_count[char] += 1
+            if char_count[char] > max_freq:
+                max_freq = char_count[char]
+            while tot_count > max_freq + k:
+                tot_count -= 1
+                char_count[s[left]] -= 1
+                left += 1
+            if tot_count > best:
+                best = tot_count
+                
+        return best
