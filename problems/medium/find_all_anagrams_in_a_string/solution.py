@@ -17,6 +17,14 @@ s and p consist of lowercase English letters.
 
 
 
+from typing import Counter
+
+
 class Solution:
     def findAnagrams(self, s: str, p: str) -> list[int]:
-        return [-1]
+        p_count = Counter(p)
+        result = []
+        for i in range(len(s) - len(p) + 1):
+            if Counter(s[i:len(p)+i]) == p_count:
+                result.append(i)
+        return result
