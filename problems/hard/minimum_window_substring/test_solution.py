@@ -5,7 +5,10 @@ from minimum_window_substring import solution
 @pytest.mark.parametrize("s, t, expected", [
     ("ADOBECODEBANC", "ABC", "BANC"),
     ("a", "a", "a"),
-    ("a", "aa", "")
+    ("a", "aa", ""),
+    ("AAAXBC", "ABC", "AXBC"),
+    ("AABBC", "ABC", "ABBC"),
+    ("ABBBC", "ABC", "ABBBC")
 ])
 
 
