@@ -3,8 +3,14 @@ from .solution import Solution
 
 
 @pytest.mark.parametrize("s, p, expected", [
-    ("cbaebabacd", "abc", [0,6]),
-    ("abab", "ab", [0,1,2])
+    
+    ("aaa", "a", [0,1,2]),
+    ("cbaebabacd", "abc", [0, 6]),              
+    ("abab", "ab", [0, 1, 2]),                  
+    ("aaaaaaaaaa", "aaaa", [0, 1, 2, 3, 4, 5, 6]),
+    ("baa", "aa", [1]),                         
+    ("abcdefg", "hij", []),                     
+    ("ab", "abc", []),                         
 ])
 
 def test_findAnagrams(s, p, expected):
