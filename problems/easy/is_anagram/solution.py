@@ -14,4 +14,7 @@ from collections import Counter
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        return Counter(s.lower().replace(" ", "")) == Counter(t.lower().replace(" ", ""))
+        return False if len(s) != len(t) else Counter(s.lower().replace(" ", "")) == \
+            Counter(t.lower().replace(" ", ""))
+    
+    # I placed extra checks to normalize to fit my favorite anagram.
