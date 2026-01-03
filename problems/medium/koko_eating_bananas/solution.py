@@ -23,6 +23,22 @@ piles.length <= h <= 109
 
 
 
+import math
+
+
 class Solution:
     def minEatingSpeed(self, piles: list[int], h: int) -> int:
-        return -1
+        hi = max(piles)
+        lo = 1
+
+        while hi != lo:
+            hours = 0
+            guess = (lo + hi) // 2
+            for pile in piles:
+                hours += math.ceil(pile / guess)
+            if hours > h:
+                lo = guess + 1
+            else:
+                hi = guess
+
+        return lo
