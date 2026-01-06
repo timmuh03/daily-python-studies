@@ -11,10 +11,29 @@ Explanation: The 4 subarrays are in single quotes below:
 ['1,0,1,0',1]
 [1,'0,1,0,1']
 [1,0,'1,0,1']
+
+constraints:
+1 <= nums.length <= 3 * 104
+nums[i] is either 0 or 1.
+0 <= goal <= nums.length
 """
+
+
+
+from collections import defaultdict
 
 
 
 class Solution:
     def numSubarraysWithSum(self, nums: list[int], goal: int) -> int:
-        return -1
+        result = prefixsum = 0
+        counts = defaultdict(int)
+        counts[0] += 1
+
+        for num in nums:
+            prefixsum += num
+            if prefixsum - goal in counts:
+                result += counts[prefixsum - goal]
+            counts[prefixsum] += 1
+
+        return result
