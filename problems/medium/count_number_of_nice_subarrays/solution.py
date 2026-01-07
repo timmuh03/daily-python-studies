@@ -16,6 +16,22 @@ Constraints:
 
 
 
+from collections import defaultdict
+
+
 class Solution:
     def numberOfSubarrays(self, nums: list[int], k: int) -> int:
-        return -1
+        odd_sum = result = 0
+        counts = defaultdict(int)
+        counts[0] = 1
+
+        for num in nums:
+            if num % 2 == 1:
+                odd_sum += 1
+                
+            if odd_sum - k in counts:
+                result += counts[odd_sum - k]
+
+            counts[odd_sum] += 1
+            
+        return result
