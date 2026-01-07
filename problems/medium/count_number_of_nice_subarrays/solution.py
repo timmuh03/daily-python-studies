@@ -21,8 +21,15 @@ from collections import defaultdict
 
 class Solution:
     def numberOfSubarrays(self, nums: list[int], k: int) -> int:
+        """
+        Returns the count of contiguous subarrays which contain exactly k odd numbers.
+        """
+        # odd_sum for measuring running sum of odds
+        # result for counting 'nice' subarrays
         odd_sum = result = 0
+        # counts maps each value of odd_sum to how many times it has occured
         counts = defaultdict(int)
+        # seed for a virtual starting position
         counts[0] = 1
 
         for num in nums:
