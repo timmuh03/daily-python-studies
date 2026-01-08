@@ -21,6 +21,20 @@ Constraints:
 """
 
 
+from collections import defaultdict
+
+
 class Solution:
     def checkSubarraySum(self, nums: list[int], k: int) -> bool:
+        current_mod = 0
+        index_prime ={0: -1}
+
+        for i, num in enumerate(nums):
+            current_mod = (num + current_mod) % k
+            if current_mod in index_prime:
+                if i - index_prime[current_mod] >= 2:
+                    return True
+            else:
+                index_prime[current_mod] = i
+
         return False
