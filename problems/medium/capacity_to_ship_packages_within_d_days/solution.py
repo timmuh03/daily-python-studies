@@ -23,4 +23,22 @@ Constraints:
 
 class Solution:
     def shipWithinDays(self, weights: list[int], days: int) -> int:
-        return -1
+        hi = sum(weights)
+        lo = max(weights)
+        while lo != hi:
+            day = 1
+            guess = (hi + lo) // 2
+            packed = 0
+            for weight in weights:
+                if packed + weight > guess:
+                    day += 1
+                    packed = weight
+                    if day > days:
+                        break
+                    continue
+                packed += weight
+            if day > days:
+                lo = guess + 1
+            else:
+                hi = guess
+        return lo
