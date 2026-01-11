@@ -17,5 +17,15 @@ Constraints:
 
 class Solution:
     def dailyTemperatures(self, temperatures: list[int]) -> list[int]:
-        return[-1]
-        
+        unresolved = []
+        result = [0] * len(temperatures)
+
+        for i in range(len(temperatures)):
+
+            while unresolved and temperatures[i] > temperatures[unresolved[-1]]:
+                index = unresolved.pop()
+                result[index] = i - index
+               
+            unresolved.append(i)
+
+        return result
