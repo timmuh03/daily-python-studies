@@ -21,4 +21,24 @@ Constraints:
 
 class Solution:
     def nextGreaterElements(self, nums: list[int]) -> list[int]:
-        return [-1]
+        result = [-1] * len(nums)
+        unresolved = []
+
+        for i in range(len(nums)):
+
+            while unresolved and nums[i] > nums[unresolved[-1]]:
+                result[unresolved.pop()] = nums[i]
+                
+            unresolved.append(i)
+
+
+
+        for i in range(len(nums)):
+            while unresolved and nums[i] > nums[unresolved[-1]]:
+                result[unresolved[-1]] = nums[i]
+                unresolved.pop()
+            if not unresolved:
+                return result
+
+
+        return result

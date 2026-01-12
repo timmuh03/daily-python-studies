@@ -5,7 +5,8 @@ from next_greater_element_II.solution import Solution
 
 @pytest.mark.parametrize("num, expected", [
     ([1, 2, 1], [2, -1, 2]),
-    ([1, 2, 3, 4, 3], [2, 3, 4, -1, 4])
+    ([1, 2, 3, 4, 3], [2, 3, 4, -1, 4]),
+    ([5, 4, 3, 2, 1], [-1, 5, 5, 5, 5])
 ])
 
 
