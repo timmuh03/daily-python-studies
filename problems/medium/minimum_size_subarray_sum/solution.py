@@ -20,4 +20,17 @@ Constraints:
 
 class Solution:
     def minSubArrayLen(self, target: int, nums: list[int]) -> int:
-        return -1
+        min_len = len(nums) + 1
+        left = 0
+        cur_sum = 0
+
+        for i, num in enumerate(nums):
+            cur_sum += num
+            while cur_sum >= target:
+                temp_len = i + 1 - left
+                min_len = min(min_len, temp_len)
+                cur_sum -= nums[left]
+                
+                left += 1
+
+        return min_len if min_len < len(nums) + 1 else 0
