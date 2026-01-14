@@ -18,4 +18,20 @@ Constraints:
 
 class Solution:
     def largestRectangleArea(self, heights: list[int]) -> int:
-        return -1
+        my_heights = heights[:]
+        my_heights.append(0)
+        valid = []
+        max_rect = 0
+
+        for i in range(len(my_heights)):
+            start = i
+
+            while valid and my_heights[i] < valid[-1][0]:
+                height, start = valid.pop()
+                curr_rect = (i - start) * height
+                if curr_rect > max_rect:
+                    max_rect = curr_rect
+            if not valid or my_heights[i] > valid[-1][0]:
+                valid.append((my_heights[i], start))
+
+        return max_rect

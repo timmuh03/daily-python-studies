@@ -5,7 +5,10 @@ from largest_rectangle_in_histogram.solution import Solution
 
 @pytest.mark.parametrize("heights, expected", [
     ([2, 1, 5, 6, 2, 3], 10),
-    ([2, 4], 4)
+    ([2, 4], 4),
+    ([2, 1, 2], 3),
+    ([2, 2, 2], 6),
+    ([2, 2, 1], 4)
 ])
 
 
