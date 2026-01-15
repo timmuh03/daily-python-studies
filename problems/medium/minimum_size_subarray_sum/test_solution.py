@@ -14,4 +14,4 @@ from minimum_size_subarray_sum.solution import Solution
 
 def test_minSubArrayLen(target, nums, expected):
     result = Solution().minSubArrayLen(target, nums)
-    assert result == expected, f"Failed on target{target}, nums:{nums}, expected:{expected}, result:{result}"
+    assert result == expected, f"Failed on target:{target}, nums:{nums}, expected:{expected}, result:{result}"
