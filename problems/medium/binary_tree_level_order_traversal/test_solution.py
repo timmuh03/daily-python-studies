@@ -1,4 +1,5 @@
 import pytest
+from src.utils.tree import build_tree
 from problems.medium.binary_tree_level_order_traversal.solution import Solution
 
 
@@ -14,5 +15,6 @@ from problems.medium.binary_tree_level_order_traversal.solution import Solution
 
 
 def test_levelOrder(input_list, expected):
-    result = Solution().levelOrder(input_list)
+    root = build_tree(input_list)
+    result = Solution().levelOrder(root)
     assert result == expected, f"Failed on root:{input_list}, expected:{expected}, result:{result}"

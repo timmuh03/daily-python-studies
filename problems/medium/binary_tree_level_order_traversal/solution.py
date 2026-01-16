@@ -25,9 +25,27 @@ The number of nodes in the tree is in the range [0, 2000].
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import deque
 from src.utils.tree import TreeNode
+
 
 
 class Solution:
     def levelOrder(self, root: TreeNode | None) -> list[list[int]]:
-        return [[]]
+        if not root: return []
+        result = []
+
+        nodes = deque([root])
+        while nodes:
+            level_vals = []
+            for _ in range(len(nodes)):
+                node = nodes.popleft()
+
+                level_vals.append(node.val)
+                if node.left is not None:
+                    nodes.append(node.left)
+                if node.right is not None:
+                    nodes.append(node.right)
+            result.append(level_vals)
+            
+        return result
