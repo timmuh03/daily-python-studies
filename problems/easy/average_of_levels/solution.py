@@ -1,4 +1,4 @@
-from src.utils.tree import TreeNode
+from utils.tree import TreeNode
 from collections import deque
 
 
