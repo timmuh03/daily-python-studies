@@ -1,13 +1,14 @@
 import pytest
-from src.utils.tree import build_tree
-from problems.medium.binary_tree_right_side_view.solution import Solution
+from utils.tree import build_tree
+from binary_tree_right_side_view.solution import Solution
 
 
 
 @pytest.mark.parametrize("input_list, expected", [
     ([1,2,3,None,5,None,4], [1,3,4]),
     ([1,2,3,4,None,None,None,5], [1,3,4,5]),
-    ([1,None,3], [1,3])
+    ([1,None,3], [1,3]),
+    ([], [])
 ])
 
 

@@ -18,7 +18,7 @@ Constraints:
 The number of nodes in the tree is in the range [0, 100].
 -100 <= Node.val <= 100
 """
-from src.utils.tree import TreeNode
+from utils.tree import TreeNode
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -28,6 +28,18 @@ from src.utils.tree import TreeNode
 #         self.right = right
 class Solution:
     def rightSideView(self, root: TreeNode | None) -> list[int]:
+        if not root: return []
+        right_side = []
 
+        def check_node(node, d):
+            if not node:
+                return
+            if d == len(right_side):
+                right_side.append(node.val)
+            check_node(node.right, d + 1)
+            check_node(node.left, d + 1)
+       
+        depth = 0
+        check_node(root, depth)
 
-        return []
+        return right_side
