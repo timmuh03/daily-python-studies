@@ -23,6 +23,7 @@ The number of nodes in the tree is in the range [1, 3000].
 -100 <= Node.val <= 100
 """
 from src.utils.tree import TreeNode
+from collections import deque
 
 
 # Definition for a binary tree node.
@@ -33,4 +34,22 @@ from src.utils.tree import TreeNode
 #         self.right = right
 class Solution:
     def widthOfBinaryTree(self, root: TreeNode | None) -> int:
-        return -1
+        if not root: return 0
+        max_width = 0
+        nodes = deque([(root, 0)])
+
+        while nodes:
+            min_val = nodes[0][1]
+            width = nodes[-1][1] - min_val + 1
+            if width > max_width: max_width = width
+
+            for _ in range(len(nodes)):
+                node, p = nodes.popleft()
+                p -= min_val
+
+                if node.left:
+                    nodes.append((node.left, p * 2))
+                if node.right:
+                    nodes.append((node.right, p * 2 + 1))
+
+        return max_width
