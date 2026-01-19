@@ -21,4 +21,19 @@ Constraints:
 
 class Solution:
     def numSubarrayProductLessThanK(self, nums: list[int], k: int) -> int:
-        return -1
+        if k <= 1: return 0 # Product can never be < 1
+        
+        left = 0 # left boundary/pointer
+        product = 1 # first number must be calculated as itself
+        result = 0
+
+        for i, num in enumerate(nums):
+            product = product * num # calculate product for window ending at new right boundary
+
+            while product >= k: # restore validity with smallest valid index
+                product = product // nums[left] # floor div to keep ints
+                left += 1 # move left boundary up one
+
+            result += i - left + 1 # all subarrays left -> i are considered valid
+
+        return result
