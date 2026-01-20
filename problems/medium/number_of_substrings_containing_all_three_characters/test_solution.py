@@ -3,7 +3,7 @@ from problems.medium.number_of_substrings_containing_all_three_characters.soluti
 
 
 
-@pytest.mark.praametrize("s, expected", [
+@pytest.mark.parametrize("s, expected", [
     ('abcabc', 10),
     ('aaacb', 3),
     ('abc', 1)
