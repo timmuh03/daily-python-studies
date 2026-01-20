@@ -1,5 +1,5 @@
 import pytest
-from .solution import Solution
+from problems.easy.is_anagram.solution import Solution
 
 
 @pytest.mark.parametrize("s, t, expected", [
