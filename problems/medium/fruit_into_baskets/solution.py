@@ -22,6 +22,27 @@ Constraints:
 
 
 
+from collections import defaultdict
+
+
 class Solution:
     def totalFruit(self, fruits: list[int]) -> int:
-        return -1
+        left = 0
+        counts = defaultdict(int)
+        result = 0
+
+        for i, fruit in enumerate(fruits):
+            counts[fruit] += 1
+                
+            while len(counts) > 2: # Loop while window is invalid
+                l_fruit = fruits[left]
+                counts[l_fruit] -= 1
+                if counts[l_fruit] == 0:
+                    del counts[l_fruit] # Remove 0 count fruits to keep validity check correct
+                left += 1
+
+            length = i - left + 1
+            if length > result: result = length # Window is always valid here so it's a possible best length
+
+
+        return result
