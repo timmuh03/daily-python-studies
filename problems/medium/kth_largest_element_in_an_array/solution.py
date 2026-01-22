@@ -15,6 +15,19 @@ Constraints:
 """
 
 
+import heapq
+
+
 class Solution:
     def findKthLargest(self, nums: list[int], k: int) -> int:
-        return -1
+        group = nums[:k]
+        heapq.heapify(group)
+        for num in nums[k:]:
+            if num > group[0]:
+                heapq.heappushpop(group, num)
+        return group[0]
+
+        ### This does pretty much the same thing without being as explicit
+        # group = nums
+        # result = heapq.nlargest(k, group)
+        # return min(result)
