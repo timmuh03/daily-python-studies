@@ -20,10 +20,10 @@ import heapq
 
 class Solution:
     def findKthLargest(self, nums: list[int], k: int) -> int:
-        group = nums[:k]
-        heapq.heapify(group)
+        group = nums[:k] # pre loading because heapify is cheaper than pushing k times.
+        heapq.heapify(group) # only need the top k nums with easy access to lowest (kth largest element)
         for num in nums[k:]:
-            if num > group[0]:
+            if num > group[0]: # only update if it's possible for num to enter heap
                 heapq.heappushpop(group, num)
         return group[0]
 
