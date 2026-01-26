@@ -24,7 +24,7 @@ class Solution:
         left = 0
         cur_sum = 0 
         max_sum = 0
-        subarray = set() # need easy access for a unique subarray
+        subarray = set() # need O(1) access for a unique subarray
 
         for num in nums:
             if num in subarray: # Adding num to subarray if already present would make it invalid
