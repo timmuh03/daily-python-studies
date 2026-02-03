@@ -38,7 +38,7 @@ class Solution:
             room = keys.pop()
             entered.add(room)
             for key in rooms[room]:
-                if key not in entered and key not in keys:
+                if key not in entered and key not in keys: # Don't schedule duplicate rooms
                     keys.append(key)
 
         return len(entered) == len(rooms)
