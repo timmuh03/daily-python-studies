@@ -37,3 +37,26 @@ def build_tree(values):
         i += 1
 
     return root
+
+
+def tree_to_level_list(root):
+    if root is None:
+        return []
+    
+    out = []
+    q = deque([root])
+
+    while q:
+        node = q.popleft()
+        if node is None:
+            out.append(None)
+            continue
+
+        out.append(node.val)
+        q.append(node.left)
+        q.append(node.right)
+
+    while out and out[-1] is None:
+        out.pop()
+
+    return out
