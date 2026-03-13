@@ -41,7 +41,7 @@ class Solution:
             count[char] += 1
             size = i - left + 1
             if count[char] <= 1 and size > max_size:
-                max_size = size
+                max_size = size # size can only beat max_size when it grows.
             while count[char] > 1:
                 count[s[left]] -= 1
                 left += 1
