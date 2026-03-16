@@ -37,10 +37,10 @@ from collections import deque
 
 class Solution:
     def wordBreak(self, s: str, wordDict: list[str]) -> bool:
-        boundaries = {0}
-        wordLengths = {len(word) for word in wordDict}
-        base = deque([0])
-        wordDictSet = set(wordDict)
+        boundaries = {0} # Set of reachable boundaries
+        wordLengths = {len(word) for word in wordDict} # Only need to test at wordlengths, not every character.
+        base = deque([0]) # Left boundaries to test from
+        wordDictSet = set(wordDict) # Faster membership checks
 
         while base:
             for length in wordLengths:
